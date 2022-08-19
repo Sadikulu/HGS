@@ -20,4 +20,5 @@ Gişe sınıfının, günlük olarak geçen araçları bir dizide
 yazıp, istenildiğinde elde edilen toplam günlük bakiyeyi
  ekrana basan bir fonksiyon yazınız.
      */
+
 }

@@ -1,4 +1,4 @@
-package tek;
+package tek_cift;
 
 public class Tek_Cift {
     /*
