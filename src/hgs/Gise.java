@@ -1,8 +1,8 @@
 package hgs;
 
 public class Gise {
-   public static int toplamBakiye;
-   public static int toplamArac;
+    static int toplamBakiye;
+    static int toplamArac;
 
     public static void toplamBakiye() {
         if (Kullanici.kullaniciBilgi[2].equalsIgnoreCase("Otomobil")) {

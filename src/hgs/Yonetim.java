@@ -35,7 +35,4 @@ public class Yonetim {
                 yonetim();
         }
     }
-
-    private static void gecenArac() {
-    }
 }
