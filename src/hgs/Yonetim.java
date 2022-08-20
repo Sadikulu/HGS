@@ -2,7 +2,9 @@ package hgs;
 
 import java.util.Scanner;
 
+
 public class Yonetim {
+
 
     static Scanner scan = new Scanner(System.in);
 
@@ -17,11 +19,11 @@ public class Yonetim {
         String secim = scan.next();
         switch (secim) {
             case "1":
-                System.out.println("Toplam Araç : "+Gise.toplamArac);
+                Yonetim.gecenArac();
                 yonetim();
                 break;
             case "2":
-                System.out.println("Toplam Bakiye : "+Gise.toplamBakiye);
+                paraCekme();
                 yonetim();
                 break;
             case "3":
@@ -34,5 +36,42 @@ public class Yonetim {
                 System.out.println("Geçerli bir değer giriniz");
                 yonetim();
         }
+    }
+
+    protected static void gecenArac() {
+        Kullanici kullanici = new Kullanici(Kullanici.getToplamBakiye(), Kullanici.getGecenArac());
+        if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
+            Kullanici.getGecenArac().add(Otomobil.getAracSinifi());
+        }
+        if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
+            Kullanici.getGecenArac().add(Minibus.getAracSinifi());
+        }
+        if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
+            Kullanici.getGecenArac().add(Otobus.getAracSinifi());
+        }
+        System.out.println(Kullanici.getGecenArac());
+    }
+
+
+    protected static void paraCekme() {
+        int toplamBakiye = 0;
+        Kullanici kullanici = new Kullanici(Kullanici.getToplamBakiye(), Kullanici.getGecenArac());
+        if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
+            Otomobil.setBakiye(Otomobil.getBakiye() - 200);
+            Kullanici.setToplamBakiye(200);
+            toplamBakiye += Kullanici.getToplamBakiye();
+
+        }
+        if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
+            Minibus.setBakiye(Minibus.getBakiye() - 250);
+            Kullanici.setToplamBakiye(250);
+            toplamBakiye += Kullanici.getToplamBakiye();
+        }
+        if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
+            Otobus.setBakiye(Otobus.getBakiye() - 300);
+            Kullanici.setToplamBakiye(300);
+            toplamBakiye += Kullanici.getToplamBakiye();
+        }
+        System.out.println("Toplam Bakiye : " + toplamBakiye);
     }
 }
