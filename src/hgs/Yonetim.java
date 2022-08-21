@@ -23,7 +23,7 @@ public class Yonetim {
                 yonetim();
                 break;
             case "2":
-                paraCekme();
+                toplamBakiye();
                 yonetim();
                 break;
             case "3":
@@ -39,39 +39,38 @@ public class Yonetim {
     }
 
     protected static void gecenArac() {
-        Kullanici kullanici = new Kullanici(Kullanici.getToplamBakiye(), Kullanici.getGecenArac());
-        if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
-            Kullanici.getGecenArac().add(Otomobil.getAracSinifi());
-        }
-        if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
-            Kullanici.getGecenArac().add(Minibus.getAracSinifi());
-        }
-        if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
-            Kullanici.getGecenArac().add(Otobus.getAracSinifi());
-        }
-        System.out.println(Kullanici.getGecenArac());
+            Kullanici kullanici = new Kullanici(Kullanici.getToplamBakiye(), Kullanici.getGecenArac());
+            if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
+                Kullanici.getGecenArac().add(Otomobil.getAracSinifi());
+            }
+            if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
+                Kullanici.getGecenArac().add(Minibus.getAracSinifi());
+            }
+            if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
+                Kullanici.getGecenArac().add(Otobus.getAracSinifi());
+            }
+            System.out.println(Kullanici.getGecenArac());
     }
 
 
-    protected static void paraCekme() {
+    protected static void toplamBakiye() {
         int toplamBakiye = 0;
         Kullanici kullanici = new Kullanici(Kullanici.getToplamBakiye(), Kullanici.getGecenArac());
-        if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
-            Otomobil.setBakiye(Otomobil.getBakiye() - 200);
-            Kullanici.setToplamBakiye(200);
-            toplamBakiye += Kullanici.getToplamBakiye();
-
-        }
-        if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
-            Minibus.setBakiye(Minibus.getBakiye() - 250);
-            Kullanici.setToplamBakiye(250);
-            toplamBakiye += Kullanici.getToplamBakiye();
-        }
-        if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
-            Otobus.setBakiye(Otobus.getBakiye() - 300);
-            Kullanici.setToplamBakiye(300);
-            toplamBakiye += Kullanici.getToplamBakiye();
-        }
-        System.out.println("Toplam Bakiye : " + toplamBakiye);
+            if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
+                Otomobil.setBakiye(Otomobil.getBakiye() - 200);
+                Kullanici.setToplamBakiye(200);
+                toplamBakiye += Kullanici.getToplamBakiye();
+            }
+            if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
+                Minibus.setBakiye(Minibus.getBakiye() - 250);
+                Kullanici.setToplamBakiye(250);
+                toplamBakiye += Kullanici.getToplamBakiye();
+            }
+            if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
+                Otobus.setBakiye(Otobus.getBakiye() - 300);
+                Kullanici.setToplamBakiye(300);
+                toplamBakiye += Kullanici.getToplamBakiye();
+            }
+            System.out.println("Toplam Bakiye : " + toplamBakiye);
     }
 }

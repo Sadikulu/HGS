@@ -6,11 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Gise {
-    static List<Otomobil> otomobilList = new ArrayList<>();
-    static List<Minibus> minibusList = new ArrayList<>();
-    static List<Otobus> otobusList = new ArrayList<>();
     static List<Object> toplamList = new ArrayList<>();
-
 
     static Scanner scan = new Scanner(System.in);
     public static void gise(){
@@ -44,7 +40,60 @@ public class Gise {
                 gise();
         }
     }
-
+    /*protected static void ekleme() {
+        if (aracTuru.equalsIgnoreCase("Otomobil")){
+            System.out.println("İsim");
+            scan.nextLine();
+            String isim=scan.nextLine();
+            System.out.println("Soyisim");
+            String soyIsim = scan.nextLine();
+            System.out.println("Araç Sınıfı");
+            String aracSinifi = scan.next();
+            System.out.println("HGS No");
+            String hgsNo = scan.next();
+            System.out.println("Bakiye");
+            int bakiye = scan.nextInt();
+            Otomobil otomobil = new Otomobil(isim, soyIsim, aracSinifi, hgsNo, bakiye);
+            //otomobilList.add(otomobil);
+            //toplamList.addAll(otomobilList);
+            toplamList.add(otomobil);
+            System.out.println(toplamList);
+        } else if (aracTuru.equalsIgnoreCase("Minibüs")) {
+            System.out.println("İsim");
+            scan.nextLine();
+            String isim=scan.nextLine();
+            System.out.println("Soyisim");
+            String soyIsim = scan.nextLine();
+            System.out.println("Araç Sınıfı");
+            String aracSinifi = scan.next();
+            System.out.println("HGS No");
+            String hgsNo = scan.next();
+            System.out.println("Bakiye");
+            int bakiye = scan.nextInt();
+            Minibus minibus = new Minibus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
+            //minibusList.add(minibus);
+            //toplamList.addAll(minibusList);
+            toplamList.add(minibus);
+            System.out.println(toplamList);
+        }else {
+            System.out.println("İsim");
+            scan.nextLine();
+            String isim=scan.nextLine();
+            System.out.println("Soyisim");
+            String soyIsim = scan.nextLine();
+            System.out.println("Araç Sınıfı");
+            String aracSinifi = scan.next();
+            System.out.println("HGS No");
+            String hgsNo = scan.next();
+            System.out.println("Bakiye");
+            int bakiye = scan.nextInt();
+            Otobus otobus = new Otobus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
+            //otobusList.add(otobus);
+            //toplamList.addAll(otobusList);
+            toplamList.add(otobus);
+            System.out.println(toplamList);
+        }
+    }*/
     protected static void otobusEkleme() {
         System.out.println("İsim");
         scan.nextLine();
@@ -58,8 +107,7 @@ public class Gise {
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
         Otobus otobus = new Otobus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        otobusList.add(otobus);
-        toplamList.addAll(otobusList);
+        toplamList.add(otobus);
         System.out.println(toplamList);
     }
 
@@ -76,8 +124,7 @@ public class Gise {
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
         Minibus minibus = new Minibus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        minibusList.add(minibus);
-        toplamList.addAll(minibusList);
+        toplamList.add(minibus);
         System.out.println(toplamList);
     }
 
@@ -94,8 +141,7 @@ public class Gise {
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
         Otomobil otomobil = new Otomobil(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        otomobilList.add(otomobil);
-        toplamList.addAll(otomobilList);
+        toplamList.add(otomobil);
         System.out.println(toplamList);
     }
 

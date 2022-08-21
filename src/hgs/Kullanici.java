@@ -11,8 +11,8 @@ public class Kullanici {
 
     @Override
     public String toString() {
-        return "Toplam Bakiye :"+toplamBakiye+"\n"+
-                "Geçen Araç :"+gecenArac;
+        return "Toplam Bakiye :" + toplamBakiye + "\n" +
+                "Geçen Araç :" + gecenArac;
     }
 
     public Kullanici(int toplamBakiye, List<String> gecenArac) {
@@ -39,20 +39,20 @@ public class Kullanici {
         Kullanici.toplamBakiye = toplamBakiye;
     }
 
-    protected static void kalanBakiye(){
+    protected static void kalanBakiye() {
         System.out.println("Bilgilerini öğrenmek istedeğiniz kullanıcının HGS No giriniz");
-        String araHgsNo=scan.next();
-        if (Gise.toplamList.contains(araHgsNo)){
-            System.out.println();
-        }
+        String araHgsNo = scan.next();
         if (Otomobil.getAracSinifi().equalsIgnoreCase("Otomobil")) {
             Otomobil.setBakiye(Otomobil.getBakiye() - 200);
+            System.out.println(Gise.toplamList.get(0));
         }
-        if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
+        else if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
             Minibus.setBakiye(Minibus.getBakiye() - 250);
+            System.out.println(Gise.toplamList.get(0));
         }
-        if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
+        else if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
             Otobus.setBakiye(Otobus.getBakiye() - 300);
+            System.out.println(Gise.toplamList.get(0));
         }
     }
 }
