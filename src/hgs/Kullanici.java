@@ -50,7 +50,7 @@ public class Kullanici {
                 aracBilgi=each.getValue().split(", ");
                 if (araHgsNo.equals(hgsNo)) {
                     int bakiye=Integer.parseInt(aracBilgi[3])-200;
-                    System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+"Araç Türü : "+aracBilgi[2]+"\n"+"Bakiye : "+bakiye);
+                    System.out.println("HGS No : "+hgsNo+"\n"+"İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+"Araç Türü : "+aracBilgi[2]+"\n"+"Kalan Bakiye : "+bakiye);
                 }
             }
         } else if (Minibus.getAracSinifi().equalsIgnoreCase("Minibüs")) {
@@ -60,7 +60,7 @@ public class Kullanici {
                 aracBilgi=each.getValue().split(", ");
                 if (araHgsNo.equals(hgsNo)) {
                     int bakiye=Integer.parseInt(aracBilgi[3])-250;
-                    System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+"Araç Türü : "+aracBilgi[2]+"\n"+"Bakiye : "+bakiye);                }
+                    System.out.println("HGS No : "+hgsNo+"\n"+"İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+"Araç Türü : "+aracBilgi[2]+"\n"+"Kalan Bakiye : "+bakiye);                }
             }
         } else if (Otobus.getAracSinifi().equalsIgnoreCase("Otobüs")) {
             Set<Map.Entry<String,String>> entrySet=Gise.toplamMap.entrySet();
@@ -69,7 +69,8 @@ public class Kullanici {
                 aracBilgi=each.getValue().split(", ");
                 if (araHgsNo.equals(hgsNo)) {
                     int bakiye=Integer.parseInt(aracBilgi[3])-300;
-                    System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+"Araç Türü : "+aracBilgi[2]+"\n"+"Bakiye : "+bakiye);                }
+                    System.out.println("HGS No : "+hgsNo+"\n"+"İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+
+                            "Araç Türü : "+aracBilgi[2]+"\n"+"Kalan Bakiye : "+bakiye);                }
             }
         }
     }
