@@ -3,7 +3,7 @@ package hgs;
 import java.util.Scanner;
 
 
-public class Yonetim {
+public class Yonetim extends Kullanici {
     static Scanner scan = new Scanner(System.in);
 
     public static void yonetim() {
@@ -38,12 +38,12 @@ public class Yonetim {
 
     protected static void gecenArac() {
 
-        System.out.println(Kullanici.gecenArac);
+        System.out.println("Toplam Geçen Araç : " + gecenArac);
     }
 
 
     protected static void toplamBakiye() {
 
-        System.out.println("Toplam Bakiye : " + Kullanici.toplamBakiye);
+        System.out.println("Toplam Bakiye : " + toplamBakiye);
     }
 }

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
-public class Gise {
+public class Gise extends Kullanici{
     static Map<String,String> toplamMap = new HashMap<>();
     static String aracTuru;
 
@@ -56,8 +56,8 @@ public class Gise {
             String soyIsim = scan.nextLine();
             System.out.println("Araç Sınıfı");
             String aracSinifi = scan.next();
-            Kullanici.gecenArac.add(aracSinifi);
-            Kullanici.toplamBakiye+=200;
+            gecenArac.add(aracSinifi);
+            toplamBakiye+=200;
             System.out.println("HGS No");
             String hgsNo = scan.next();
             System.out.println("Bakiye");
@@ -75,8 +75,8 @@ public class Gise {
             String soyIsim = scan.nextLine();
             System.out.println("Araç Sınıfı");
             String aracSinifi = scan.next();
-            Kullanici.gecenArac.add(aracSinifi);
-            Kullanici.toplamBakiye+=250;
+            gecenArac.add(aracSinifi);
+            toplamBakiye+=200;
             System.out.println("HGS No");
             String hgsNo = scan.next();
             System.out.println("Bakiye");
@@ -94,8 +94,8 @@ public class Gise {
             String soyIsim = scan.nextLine();
             System.out.println("Araç Sınıfı");
             String aracSinifi = scan.next();
-            Kullanici.gecenArac.add(aracSinifi);
-            Kullanici.toplamBakiye+=300;
+            gecenArac.add(aracSinifi);
+            toplamBakiye+=200;
             System.out.println("HGS No");
             String hgsNo = scan.next();
             System.out.println("Bakiye");
@@ -125,16 +125,31 @@ public class Gise {
         String soyIsim = scan.nextLine();
         System.out.println("Araç Sınıfı");
         String aracSinifi = scan.next();
+        gecenArac.add(aracSinifi);
+        toplamBakiye+=200;
         System.out.println("HGS No");
         String hgsNo = scan.next();
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
+        LocalDate tarih=LocalDate.now();
+        LocalTime saat = LocalTime.now();
         Otobus otobus = new Otobus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        toplamList.add(otobus);
-        System.out.println(toplamList);
-    }
+        String eklenenValue=isim+", "+soyIsim+", "+aracSinifi+", "+bakiye+", "+tarih+", "+saat;
+        toplamMap.put(hgsNo,eklenenValue);
+        }
+        String[] aracBilgi;
+        String hgsNo="";
+        Set<Map.Entry<String,String>> entrySet=Gise.toplamMap.entrySet();
+        for (Map.Entry<String,String> each :entrySet) {
+            hgsNo=each.getKey();
+            aracBilgi=each.getValue().split(", ");
+                System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+
+                        "Araç Türü : "+aracBilgi[2]+"\n"+"HGS No : "+hgsNo+"\n"+"Bakiye : "+aracBilgi[3]+"\n"+
+                        "Tarih : "+aracBilgi[4]+"\n"+"Saat : "+aracBilgi[5]+"\n");
+            }
+    }*/
 
-    protected static void minibusEkleme() {
+    /*protected static void minibusEkleme() {
         System.out.println("İsim");
         scan.nextLine();
         String isim=scan.nextLine();
@@ -142,16 +157,31 @@ public class Gise {
         String soyIsim = scan.nextLine();
         System.out.println("Araç Sınıfı");
         String aracSinifi = scan.next();
+        gecenArac.add(aracSinifi);
+        toplamBakiye+=200;
         System.out.println("HGS No");
         String hgsNo = scan.next();
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
+        LocalDate tarih=LocalDate.now();
+        LocalTime saat = LocalTime.now();
         Minibus minibus = new Minibus(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        toplamList.add(minibus);
-        System.out.println(toplamList);
-    }
+        String eklenenValue=isim+", "+soyIsim+", "+aracSinifi+", "+bakiye+", "+tarih+", "+saat;
+        toplamMap.put(hgsNo,eklenenValue);
+        }
+        String[] aracBilgi;
+        String hgsNo="";
+        Set<Map.Entry<String,String>> entrySet=Gise.toplamMap.entrySet();
+        for (Map.Entry<String,String> each :entrySet) {
+            hgsNo=each.getKey();
+            aracBilgi=each.getValue().split(", ");
+                System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+
+                        "Araç Türü : "+aracBilgi[2]+"\n"+"HGS No : "+hgsNo+"\n"+"Bakiye : "+aracBilgi[3]+"\n"+
+                        "Tarih : "+aracBilgi[4]+"\n"+"Saat : "+aracBilgi[5]+"\n");
+            }
+    }*/
 
-    protected static void otomobilEkleme() {
+    /*protected static void otomobilEkleme() {
         System.out.println("İsim");
         scan.nextLine();
         String isim=scan.nextLine();
@@ -159,13 +189,28 @@ public class Gise {
         String soyIsim = scan.nextLine();
         System.out.println("Araç Sınıfı");
         String aracSinifi = scan.next();
+        gecenArac.add(aracSinifi);
+        toplamBakiye+=200;
         System.out.println("HGS No");
         String hgsNo = scan.next();
         System.out.println("Bakiye");
         int bakiye = scan.nextInt();
+        LocalDate tarih=LocalDate.now();
+        LocalTime saat = LocalTime.now();
         Otomobil otomobil = new Otomobil(isim, soyIsim, aracSinifi, hgsNo, bakiye);
-        toplamList.add(otomobil);
-        System.out.println(toplamList);
+        String eklenenValue=isim+", "+soyIsim+", "+aracSinifi+", "+bakiye+", "+tarih+", "+saat;
+        toplamMap.put(hgsNo,eklenenValue);
+        }
+        String[] aracBilgi;
+        String hgsNo="";
+        Set<Map.Entry<String,String>> entrySet=Gise.toplamMap.entrySet();
+        for (Map.Entry<String,String> each :entrySet) {
+            hgsNo=each.getKey();
+            aracBilgi=each.getValue().split(", ");
+                System.out.println("İsim : "+aracBilgi[0]+"\n"+"Soyisim : "+aracBilgi[1]+"\n"+
+                        "Araç Türü : "+aracBilgi[2]+"\n"+"HGS No : "+hgsNo+"\n"+"Bakiye : "+aracBilgi[3]+"\n"+
+                        "Tarih : "+aracBilgi[4]+"\n"+"Saat : "+aracBilgi[5]+"\n");
+            }
     }*/
 
 }
